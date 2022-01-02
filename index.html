@@ -159,7 +159,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/19/%E7%AC%AC%E4%B8%89/">第三</a>
+      <a class="article-title" href="/2021/12/19/%E7%AC%AC%E4%B8%89/">ES6基础语法</a>
     </h1>
   
 
@@ -172,7 +172,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="1-变量声明方法："><a href="#1-变量声明方法：" class="headerlink" title="1.变量声明方法："></a>1.变量声明方法：</h3><p>var：重复声明；<br>es6中：块级作用域<br>    let：防止重复声明；变量；可以重新赋值；<br>    const:防止重复声明；常量，不可变；<br>例：给1、2、3三个按钮依次弹出数字123.<br>    var变量的作用域是是函数，想达到效果，再包一层函数，那么再for循环中，循环几次就有几个函数被执行，也就能得到单独的I</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> abtn = document.getElementsByTagName(<span class="string">&#x27;input&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (var i=0;i&lt;abtn.length;i++) &#123;</span><br><span class="line">	(<span class="keyword">function</span>(i)&#123;</span><br><span class="line">		abtn[i].onclick = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">			alert(i+1);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>而let有自己的块，两者效果相同：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="built_in">let</span> i=0;i&lt;abtn.length;i++) &#123;</span><br><span class="line">	abtn[i].onclick = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">		alert(i+1);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
       
 
       
@@ -297,7 +303,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="问题1"><a href="#问题1" class="headerlink" title="##问题1"></a>##问题1</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty">hexo搭建博客学习视频链接</a><br>执行hexo d命令后无法输入密码：原因：token（个人访问令牌）过期；<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41010198/article/details/119698015?utm_source=app&app_version=4.12.0&code=app_1562916241&uLinkId=usr1mkqgl919blen">解决办法参考这位博主整理的方法</a><br>直接修改repo:’’<br>repo: https://填你拿到的<a href="mailto:&#x74;&#111;&#107;&#101;&#x6e;&#x40;&#103;&#105;&#116;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#x6d;">&#x74;&#111;&#107;&#101;&#x6e;&#x40;&#103;&#105;&#116;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#x6d;</a>/SoberGit/SoberGit.github.io.git</p>
+        <h2 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h2><hr>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty">hexo搭建博客学习视频链接</a><br>执行hexo d命令后无法输入密码：原因：token（个人访问令牌）过期；<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41010198/article/details/119698015?utm_source=app&app_version=4.12.0&code=app_1562916241&uLinkId=usr1mkqgl919blen">解决办法参考这位博主整理的方法</a><br>直接修改repo:’’<br>repo: https://填你拿到的<a href="mailto:&#116;&#x6f;&#107;&#101;&#110;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#116;&#x6f;&#107;&#101;&#110;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#x6f;&#x6d;</a>/SoberGit/SoberGit.github.io.git</p>
 <hr>
 <h3 id="笔记整理："><a href="#笔记整理：" class="headerlink" title="笔记整理："></a>笔记整理：</h3><p>安装Nodejs<br>node -v    #查看node版本<br>npm -v    #查看npm版本<br>npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="http://registry.npm.taobao.org/">http://registry.npm.taobao.org</a>    #安装淘宝的cnpm 管理器<br>cnpm -v    #查看cnpm版本<br>cnpm install -g hexo-cli    #安装hexo框架<br>hexo -v    #查看hexo版本<br>mkdir blog    #创建blog目录<br>cd blog     #进入blog目录<br>sudo hexo init     #生成博客 初始化博客<br>hexo s    #启动本地博客服务<br><a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a>    #本地访问地址<br>hexo n “我的第一篇文章” #创建新的文章<br>#返回blog目录<br>hexo clean #清理<br>hexo g #生成<br>#Github创建一个新的仓库 YourGithubName.github.io<br>cnpm install –save hexo-deployer-git #在blog目录下安装git部署插件</p>
 <hr>
@@ -433,7 +440,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2021 John Doe
+    		&copy; 2022 John Doe
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
