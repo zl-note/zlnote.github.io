@@ -16,7 +16,7 @@
 <meta property="og:description" content="1.变量声明方法：var：重复声明；es6中：块级作用域    let：防止重复声明；变量；可以重新赋值；    const:防止重复声明；常量，不可变；例：给1、2、3三个按钮依次弹出数字123.    var变量的作用域是是函数，想达到效果，再包一层函数，那么再for循环中，循环几次就有几个函数被执行，也就能得到单独的I 123456789let abtn &#x3D; document.getElem">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-12-19T13:24:32.000Z">
-<meta property="article:modified_time" content="2022-01-02T15:05:28.841Z">
+<meta property="article:modified_time" content="2022-01-02T17:14:35.638Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -178,9 +178,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> abtn = document.getElementsByTagName(<span class="string">&#x27;input&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (var i=0;i&lt;abtn.length;i++) &#123;</span><br><span class="line">	(<span class="keyword">function</span>(i)&#123;</span><br><span class="line">		abtn[i].onclick = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">			alert(i+1);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>而let有自己的块，两者效果相同：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="built_in">let</span> i=0;i&lt;abtn.length;i++) &#123;</span><br><span class="line">	abtn[i].onclick = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">		alert(i+1);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
+<h3 id="2-解构赋值："><a href="#2-解构赋值：" class="headerlink" title="2.解构赋值："></a>2.解构赋值：</h3>
       
 
       
